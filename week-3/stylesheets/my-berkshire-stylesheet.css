@@ -1,3 +1,124 @@
-html {
-  background-color: red;
+* {
+    color: #000080;
+    background-color: white;
+    font-family: "Comic Sans MS";
 }
+
+.description {
+    color: navy;
+    font-size: .6em;
+}
+
+a:link {
+    color: #800080;
+}
+
+a:visited {
+    color: red;
+}
+
+nav {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    border-top: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+ul {
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 25px;
+}
+
+.larger {
+    font-size: 1.7em;
+}
+
+.company {
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.address {
+    font-size: .9em;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.2em;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+
+.geico {
+    border-top: 1px solid black;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-size: .7em;
+}
+
+.geico p {
+    margin: 0;
+}
+
+.disclaimer {
+    border-top: 1px solid black;
+    margin-top: 10px;
+    font-size: .8em;
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-top: 10px;
+}
+
+.copyright {
+    font-size: .6em;
+}
+
+.bold {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border: 10px dashed pink;
+}
+
+/*
+-What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+
+
+-What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+
+
+-What CSS did you use to modify the element style (like size, color, etc.)
+
+
+
+-Did you modify the HTML to include classes or ids? If so, which did you chose and why? If you didn't, how would you know which one to add to your HTML?
+
+
+
+-When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+
+
+*/
