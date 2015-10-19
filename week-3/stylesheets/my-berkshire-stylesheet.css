@@ -103,22 +103,22 @@ header img {
 /*
 -What is important to know when linking an external file (like a stylesheet) to an HTML file?
 
-
+You must make sure to know the correct path to the document and the language type it contains. The file must also go into the header in reverse order of its priority.
 
 -What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
 
-
+We used a lot of margin and blocking work. The site was not too hard to work with, as all of the code necessary was pretty linear.
 
 -What CSS did you use to modify the element style (like size, color, etc.)
 
-
+We changed font sizing, text aligning, padding, coloring, and font family.
 
 -Did you modify the HTML to include classes or ids? If so, which did you chose and why? If you didn't, how would you know which one to add to your HTML?
 
-
+We used classes mostly because the code consisted of permanent actions. Id tags to my knowledge are used when you want to apply css only once and specifically to a section on a given page.
 
 -When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
 
-
+Comparatively speaking I think our site followed best practices closer. I expect this was the case due to a severe lack of updating on Berkshire Hathaway’s part.
 
 */
