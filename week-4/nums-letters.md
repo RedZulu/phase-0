@@ -14,7 +14,9 @@ print ((365 *24) * 10) * 60
 ```
 [4.2.1 Defining Variables](https://github.com/RedZulu/phase-0/blob/master/week-4/defining-variables.rb)
 
+[4.2.2 Simple String](https://github.com/RedZulu/phase-0/blob/master/week-4/simple-string.rb)
 
+[4.2.3 Local Variables and Basic Arithmetical Expressions]()
 
 ###How does Ruby handle addition, subtraction, multiplication, and division of numbers?
 
