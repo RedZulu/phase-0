@@ -1,8 +1,3 @@
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
 
 ##What does puts do?
 Puts adds a new line after the end of the output.
@@ -14,14 +9,9 @@ An integer is a number without a decimal. A float is a number with decimals. Use
 Float division takes the computer longer to process due to the amount of numbers used in the equation. Integer division is faster because it uses only rounded numbers, which takes up less memory.
 
 ```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
 print 365 *24
 print ((365 *24) * 10) * 60
-
+```
 
 ##How does Ruby handle addition, subtraction, multiplication, and division of numbers?
 
@@ -35,7 +25,7 @@ print ((365 *24) * 10) * 60
 ##What are strings? Why and when would you use them?
 
 
-#What are local variables? Why and when would you use them?
+##What are local variables? Why and when would you use them?
 
 
 ##How was this challenge? Did you get a good review of some of the basics?
