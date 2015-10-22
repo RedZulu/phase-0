@@ -1,0 +1,26 @@
+header{
+    background-color: green;
+    position: absolute;
+    top:0;
+}
+
+.column-1{
+    background-color: red;
+}
+
+.column {
+    padding-top: 150px;
+    display:inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+.column-2{
+    background-color: blue;
+}
+
+footer{
+    background-color: yellow;
+    position: static;
+    bottom: 0;
+}
