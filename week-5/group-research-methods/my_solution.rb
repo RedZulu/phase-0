@@ -89,7 +89,17 @@ end
 
 # Release 1: Identify and describe the Ruby method you implemented. Teach your
 # accountability group how to use the methods.
-#
+=begin
+  In order to use my array splitting method one must simply input the name of the array they which to divide into two groups.
+  The method is used to divide(partition) the original into two arrays within a clone array. The first array will display integers while the
+  second shows strings. This is done by sorting the clone as a single array, then dividing(partioning) them where the strings begin. 
+  To reiterate, both of these arrays are contained in a total array. This is a non destructive method, and the
+  output is a clone of the original.
+
+  In order to use my has splitting method one inputs the title of a previously created hash and the age by which to sort. The hash 
+  is cloned and then partioned from where the value of the key is less than until equal to the age input as an integer. 
+
+=end
 #
 #
 
