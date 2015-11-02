@@ -2,7 +2,7 @@
 
 # I worked on this challenge with Sabrina Unrein
 
-# I spent [] hours on this challenge.
+# I spent [2] hours on this challenge.
 
 # Complete each step below according to the challenge directions and
 # include it in this file. Also make sure everything that isn't code
@@ -51,10 +51,18 @@ end
 	
 Which data structure did you and your pair decide to implement and why?
 
+We implimented a hash container for the initial array, so we could play with the values of the keys.
+
 Were you more successful breaking this problem down into implementable pseudocode than the last with a pair? 
+
+Not really unfortunatly.
 
 What issues/successes did you run into when translating your pseudocode to code?
 
+We neglected to comment out what each step would intail within its inital lable.
+
 What methods did you use to iterate through the content? Did you find any good ones when you were refactoring? Were they difficult to implement?
+
+each, value, and max. Our refactor pretty much translated all of our work into one line. The best one we found was probably inject.
 
 =end
