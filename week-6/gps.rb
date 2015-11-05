@@ -64,16 +64,23 @@ serving_size_mod = order_quantity % serving_size
 
 # What did you learn about making code readable by working on this challenge?
 
-# I learned that it is important to break down the code in question methodically. Move from top to bottom in small sections to really see what is going on. You shouldn't be afraid to go line by line.
+# I learned that it is important to break down the code in question methodically.
+# Move from top to bottom in small sections to really see what is going on.
+# You shouldn't be afraid to go line by line.
 
 # Did you learn any new methods? What did you learn about them?
 
-# I learned about the values_at method and how it checks the values within a hash at a certain parameter. I also learned more about the has_key? method, which checks to see if a hash cointains a certain key.
+# I learned about the values_at method and how it checks the
+# values within a hash at a certain parameter. I also learned more
+# about the has_key? method, which checks to see if a hash cointains a certain key.
 
 # What did you learn about accessing data in hashes?
 
-# Accessing data can be done in a number of different ways. Often when appraoching a complicated access block there are simpler ways of appraoching the same problem.
+# Accessing data can be done in a number of different ways. Often when
+# appraoching a complicated access block there are simpler ways of appraoching
+# the same problem.
 
 # What concepts were solidified when working through this challenge?
 
-# Accessing data within hashes and arrays, do iteration, and case methods were all solidified more so through this challenge.
+# Accessing data within hashes and arrays, do iteration, and case methods
+# were all solidified more so through this challenge.
