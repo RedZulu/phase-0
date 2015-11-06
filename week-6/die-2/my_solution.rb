@@ -6,10 +6,17 @@
 
 # Pseudocode
 
-# Input:
-# Output:
+# Input:an array of strings
+# Output:one random string and the number of sides on the die
 # Steps:
-
+#input the string
+#create a section for the strings defined as lables
+#count the length of the lable array indecies
+#put the index size in a sides variable
+#raise error if not enough sides
+#roll random index
+#equate random index to lable index
+#output the equated lable string
 
 # Initial Solution
 
