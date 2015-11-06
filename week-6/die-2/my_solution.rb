@@ -71,3 +71,21 @@ die = Die.new
  die.roll
 
 # Reflection
+=begin
+What were the main differences between this die class and the last one you created in terms of implementation? Did you need to change much logic to get this to work?
+
+I needed to make a new input slot for an array of strings. The logic was pretty similar. The only difference was that I needed to compaire the rand sides index with array index.
+
+What does this exercise teach you about making code that is easily changeable or modifiable?
+
+As long as your logic is simple sound and non repetitive, changing it is not too difficult.
+
+What new methods did you learn when working on this challenge, if any?
+
+None really.
+
+What concepts about classes were you able to solidify in this challenge?
+
+Splitting was solidified.
+
+=end
