@@ -1,5 +1,5 @@
 
-# I worked on this challenge with Ryan.
+# I worked on this challenge with Gregg.
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
