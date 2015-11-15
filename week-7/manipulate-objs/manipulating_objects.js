@@ -32,7 +32,9 @@ adam["children"] = terah.children;
 // Reflection: Use the reflection guidelines
 //
 //What tests did you have trouble passing? What did you do to make it pass? Why did that work?
-//The spouse of spouse test was difficult because I //originaly tried to contain it within adam, but due //to the order of logical operations tera wouldn't be //defined yet, so I had to make it cyclical within the //terah varibale.
+//The spouse of spouse test was difficult because I originaly tried to contain it within adam,
+//but due to the order of logical operations tera wouldn't be defined yet, so I had to make
+//it cyclical within the terah varibale.
 //
 //How difficult was it to add and delete properties outside of the object itself?
 //Not too hard.
