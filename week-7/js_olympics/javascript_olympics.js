@@ -1,6 +1,6 @@
 // JavaScript Olympics
 
-// I paired [by myself, with:] on this challenge.
+// I paired [with: Shawn Spears] on this challenge.
 
 // This challenge took me [#] hours.
 
@@ -53,13 +53,15 @@ console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps
 
 // Reflection
 //What JavaScript knowledge did you solidify in this challenge?
-
+//flow control and boolians were solidified.
 
 
 //What are constructor functions?
-
+// They work like regular functions by retuning an
+// object, but they also have the ability to refer to
+// new objects by using this.
 
 
 //How are constructors different from Ruby classes (in your research)?
-
-
+//Using this. allows for more interweavable flexability
+// and recursion
