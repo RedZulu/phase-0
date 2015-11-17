@@ -1,26 +1,15 @@
-/* Pseudocode */
-// Input: text for proposed options in text based rpg
-// Output: new situations in prompt alert box
-//DEFINE function for game
-//SET user variables for global scope
-//START GAME
-//Alert Game Title
-//Ask player name
-//IF no name given ask again
-//BEGIN New Prompt
-//SET options FOR first playscreen
-//Check answer
-//IF option A move to screen2
-//IF option B alert error, prompt screen1 again
-
 
 (function(){
 /* Don't touch this or the code above */
 
 /* Important game variable */
-var gameTitle = "Enter the Hero";
+var gameTitle = "Hero-00";
 var intro = "Welcome to a new day."
 var playerName = "";
+var pants = false;
+var toothbrush = false;
+var hearts = 5;
+var coins = 0;
 
 alert(gameTitle);
 /* Title Screen*/
@@ -50,7 +39,7 @@ function playScreen1(){
     }
 
     if(answer === "B"){
-      alert("You need to put on pants to enter the kitchen.");
+      alert("Put some pants on to enter the kitchen.");
       playScreen1();
     }
   }
@@ -61,7 +50,63 @@ function playScreen1(){
 
 /* Option screen 2 */
 function playScreen2(){
-  alert("Screen 2 played.");
+  var screen2Text = "Same old bathroom, same old face in the mirror, " + "what will you do?\n"+
+  "A) Look for toothbrush \n"+
+  "B) Look for your pants \n"+
+  "C) Quit";
+
+  function checkAnswer(answer){
+    var roll = ge.rollDice();
+    if (answer === "A"){
+      if(toothbrush){
+        alert("You can't find something you already have.");
+        playScreen2();
+      }
+      else{
+        if (roll>6){
+          toothbrush = true;
+          alert("You found a toothbrush");
+          playScreen2();
+        }
+        else{
+          alert("No luck finding a toothbrush, try again.");
+        }
+      }
+    }
+    if (answer === "B"){
+      if(pants){
+        alert("You are already wearing pants, head to the kitchen!");
+        playScreen2();
+      }
+      else{
+        if(roll===3 || roll===6 || roll===9 || roll===12){
+          pants = true;
+          alert("You put on pants!");
+        }
+        else{
+          //fight here
+          var roll2 = ge.rollDice();
+          if(roll2>5){
+            coins += 5;
+            alert("You came across a Gremlin and defeated it! "+"You found 5 coins!");
+            playScreen2();
+          }
+          else{
+            hearts--;
+            alert("You fought a Gremlin and suffered it's puny wrath. " + "You lost a heart.");
+          }
+          if(hearts<1){
+            alert("This was your final battle, game over.");
+          }
+          else{
+            playScreen2();
+          }
+        }
+      }
+    }
+  }
+  var answer = prompt(screen2Text);
+  checkAnswer(answer);
 }
 
 playScreen1();
@@ -71,25 +116,3 @@ playScreen1();
 })();
 
 
-/* REFLECT */
-//What was the most difficult part of the challenge?
-// Determining what kind of game I was going to make.
-// Also, figuring out how to check the users answers.
-//
-//What did you learn about creating objects and
-//functions that interact with one another?
-// Creating multiple functions to hold variables and
-// boolians are essential to proper logic formatting.
-//
-//Did you learn any new built-in methods you could use
-//in your refactored solution? If so, what were they
-//and how do they work?
-// !object and ===, both are conditionals for flow
-// control. !object checks to see if an object exsists
-// and if not preforms an action. === compares two
-// objects to each other to see if it's true that they
-// both equal each other.
-//
-//How can you access and manipulate properties of objects?
-// Through a multitude of methods, mainly by setting new
-// variables equal to aformentioned keys.
