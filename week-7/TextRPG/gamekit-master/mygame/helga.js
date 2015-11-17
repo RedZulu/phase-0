@@ -1,7 +1,7 @@
 (function(w){
     var screenTmpl = {
         id: 0,
-        title:"", 
+        title:"",
         text: "",
         a: "",
         b: "",
@@ -38,12 +38,12 @@
             return act;
         }
     };
-    
+
     var gameData;
-    
+
    var gameEngine = {
-       tokens: ["{{NAME}}", "{{TITLE}}", "{{RESCUEE}}", "{{MATCHES}}", "{{HEARTS}}", "{{GEMS}}", "{{ENEMY}}", "{{BOSS}}", "{{INVENTORY}}"],
-       tokenHandlers: ["name", "title", "rescuee", "matches", "hearts", "gems", "getEnemy", "getCurrentBossName", "formatInventory"],
+       tokens: ["{{NAME}}", "{{TITLE}}", "{{RESCUEE}}", "{{MATCHES}}", "{{HEARTS}}", "{{COINS}}", "{{ENEMY}}", "{{BOSS}}", "{{INVENTORY}}"],
+       tokenHandlers: ["name", "title", "rescuee", "matches", "hearts", "coins", "getEnemy", "getCurrentBossName", "formatInventory"],
        getScreen: function(gd, num){
            var scr = gd.screens[num] || false;
            return scr;
@@ -78,7 +78,7 @@
                usePrompt: false,
                stats: this.getStats()
            };
-           
+
            if (scr) {
                display.text = scr.title + "\n" + display.bar + "\n" + scr.text + "\n";
                //opts = scr.a + "\n" + scr.b + "\n" + scr.c + "\n" + scr.d + "\n" + scr.e + "\n";
@@ -89,28 +89,28 @@
                        }
                    }
                }
-               
+
                if (display.opts.trim() || scr.usePrompt) {
                    display.usePrompt = true;
                }
-               
+
                if (scr.hideStats) {
                    display.stats = "";
                }
-               
+
                //pre process text
                display.text = this.parse(display.text);
                display.opts = this.parse(display.opts);
                return display;
            }
-           
+
            return false;
-           
+
        },
        getStats: function(){
            var text = "Hearts: {{HEARTS}}\n";
-           text += "Gems: {{GEMS}}\n";
-           
+           text += "coins: {{coins}}\n";
+
            text = this.parse(text);
            return text;
        },
@@ -118,20 +118,20 @@
            var inv = this.getItem("inventory");
            var text = "";
            var bar = "====================";
-           
+
            text += bar + "";
            for(var item in inv){
                var itm = inv[item];
                text += "\n" + itm.title + ": " + itm.name + "\n" + bar;
            }
-           
+
            return text;
        },
        setInventory: function(item, title, name) {
            var inv = this.getItem("inventory");
-           
+
            var itm = inv[item] || {title: "Unknown", name: ""};
-           
+
            if (title){
                itm.title = title;
            }
@@ -165,11 +165,11 @@
                var item = this.tokenHandlers[i];
                var val = this.getItem(item);
                var handler = this[item] || false;
-               
+
                if (typeof(handler) === 'function') {
                    val = handler.apply(this);
                }
-               
+
                txt = txt.replace(tkn, val);
            }
            return txt;
@@ -178,11 +178,11 @@
        process: function(gd, screenNum, answer){
            this.setItem("_previousScreen", this.getItem("_currentScreen"));// Use this if you have menu commands that need to return to the current action screen
            this.setItem("_currentScreen", screenNum);
-           
+
            if (answer) {
                answer = answer.trim().toUpperCase();
            }
-           
+
            var act = gd.screens[screenNum - 1].action(this, gd, answer);// call screen specific logic
 
 
@@ -190,17 +190,17 @@
                var hearts = act.hearts || 0;// heart adjustment
                var currentHearts = this.getItem('hearts');
                var goto = act.goto || 99999;
-               var gems = act.gems || 0;
+               var coins = act.coins || 0;
                var potion = this.getItem('heartPotion');
                var matches = act.matches || 0;
                var shield = this.getItem('_currentShield') || 0;
-               
+
                if (matches) {
                    this.adjustItem('matches', matches);
                    var matchesText = "Matches (" + this.getItem("matches") + ")";
                     this.setInventory('light', 'Light', matchesText);
                }
-               
+
                /*
                remove or add hearts first if hearts === 0 game is over unless hasHeartPotion === true
                return false to quit
@@ -215,29 +215,29 @@
                    }
                   currentHearts = this.adjustItem('hearts', hearts);
                }
-               //Revive player 
+               //Revive player
                if (!currentHearts && potion) {
                    this.adjustItem('hearts', this.getItem('_heartLimit'));
                    this.setItem('heartPotion', false);
                    ths.setInventory("potion", "", "---");
                    currentHearts = this.adjustItem('hearts', hearts);
                }
-               
-               
+
+
                //game over player was killed
                if (!currentHearts) {
                    console.log('Process: game over.');
                    return false;
                }
-               //handle gems
-               if (gems) {
-                   this.adjustItem('gems', gems);
+               //handle coins
+               if (coins) {
+                   this.adjustItem('coins', coins);
                }
-               
+
                if (goto) {
                    this.showScreen(gd, goto);
                }
-               
+
            }
            else {
                this.showScreen(gd, this.getItem('_currentScreen'));
@@ -267,11 +267,11 @@
            console.log('screen template ', screenTmpl);
        },
        setTitle: function(title){
-           
+
            if (title) {
                gameData.screens[0].title = title;
            }
-               
+
            var ttl = gameData.screens[0].title;
            gameData.title = ttl;
        },
@@ -308,7 +308,7 @@
        getBoss: function(num){
            var bosses = this.getItem("bosses");
            var boss = bosses[num - 1];
-           
+
            return boss;
        },
        attack: function(target, damage){
@@ -317,7 +317,7 @@
            if (hearts < 0) {
                hearts = 0;
            }
-           
+
            target.hearts = hearts;
            return hearts;
        },
@@ -326,9 +326,9 @@
            return boss.name || "";
        },
        sellItem: function(item, price){
-           var gems = this.getItem('gems');
-           if (gems >= price) {
-               this.adjustItem('gems', (price * -1));
+           var coins = this.getItem('coins');
+           if (coins >= price) {
+               this.adjustItem('coins', (price * -1));
                this.setItem(item, true);
                return true;
            }
@@ -340,12 +340,12 @@
            this.showScreen(gd, 1);
        }
     };
-    
+
     if (w) {
         w.ge = gameEngine;
     }
-    
+
     return gameEngine;
-    
+
 
 })(window);
