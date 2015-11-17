@@ -3,7 +3,7 @@
 /* Don't touch this or the code above */
 
 /* Important game variable */
-var gameTitle = "Hero-00";
+var gameTitle = "HERO-00";
 var intro = "Welcome to a new day."
 var playerName = "";
 var pants = false;
@@ -88,12 +88,12 @@ function playScreen2(){
           var roll2 = ge.rollDice();
           if(roll2>5){
             coins += 5;
-            alert("You came across a Gremlin and defeated it! "+"You found 5 coins!");
+            alert("You came across a Gremlin and defeated it! "+"You found 5 coins! "+"You still need to find your pants.");
             playScreen2();
           }
           else{
             hearts--;
-            alert("You fought a Gremlin and suffered it's puny wrath. " + "You lost a heart.");
+            alert("You fought a Gremlin and suffered it's puny wrath. " + "You lost a heart. "+"You still need to find your pants");
           }
           if(hearts<1){
             alert("This was your final battle, game over.");
